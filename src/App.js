@@ -1,7 +1,8 @@
 import React from 'react';
-
+import buildInfo from './buildInfo';
 import './App.css';
 
+const buildDate = new Date(buildInfo.buildDate);
 class App extends React.Component {
 
   constructor(props) {
@@ -14,6 +15,16 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   };
+
+  componentDidMount() {
+    let dashes = '='.repeat(80);
+    console.log(dashes);
+    console.log('Site: UPS Tracking URL Launcher');
+    console.log('Copyright John M. Wargo (john@johnwargo.com)');
+    console.log(`Build: ${buildInfo.buildVersion} - ${buildDate.toString()}`);
+    console.log('(build information generated using my `react-build-info` package: https://www.npmjs.com/package/react-build-info)');
+    console.log(dashes);    
+  }
 
   handleChange(event) {
     this.setState({ trackingNumber: event.target.value });
