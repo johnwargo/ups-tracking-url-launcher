@@ -42,7 +42,7 @@ class App extends React.Component {
             <span className="font-semibold text-xl tracking-tight">UPS Tracking URL Launcher</span>
           </div>
         </nav>
-        <div className="container mx-auto px-5 py-5">
+        <div className="container px-5 py-5">
           <label className='font-bold'>
             UPS Tracking Number:&nbsp;
             <input
@@ -55,8 +55,9 @@ class App extends React.Component {
           </label>
           <br />
           <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-5 border border-blue-700 rounded"
+            name="launchButton"
             hidden={this.state.trackingNumber.length === 0}
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-5 border border-blue-700 rounded"
             onClick={this.handleClick}>
             Launch Tracking URL
           </button>
