@@ -1,6 +1,6 @@
 {
   "name": "ups-tracking-url-launcher",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "private": true,
   "dependencies": {
     "react": "^17.0.2",
@@ -20,7 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm version patch && react-build-info && react-scripts build",
+    "pbuild": "npm version patch && react-build-info && react-scripts build",
+    "build": "react-build-info && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
