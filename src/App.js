@@ -23,15 +23,20 @@ class App extends React.Component {
     console.log('Copyright John M. Wargo (john@johnwargo.com)');
     console.log(`Build: ${buildInfo.buildVersion} - ${buildDate.toString()}`);
     console.log('(build information generated using my `react-build-info` package: https://www.npmjs.com/package/react-build-info)');
-    console.log(dashes);    
+    console.log(dashes);
   }
 
   handleChange(event) {
-    this.setState({ trackingNumber: event.target.value });
+    this.setState({ trackingNumber: event.target.value.trim() });
   }
 
-  handleClick(event) {
-    window.open(`https://www.ups.com/track?loc=en_US&requester=QUIC&tracknum=${this.state.trackingNumber}/trackdetails`);
+  async handleClick(event) {
+    let theURL = `https://www.ups.com/track?loc=en_US&requester=QUIC&tracknum=${this.state.trackingNumber}/trackdetails`;
+    // Copy the URL to the clipboard
+    await navigator.clipboard.writeText(theURL);
+    // Open the URL 
+    console.log(`Launching tracking URL: ${theURL}`);
+    window.open(theURL);
   }
 
   render() {
@@ -64,6 +69,16 @@ class App extends React.Component {
         </div>
       </div>
     );
+  }
+
+  // https://newbedev.com/javascript-copy-to-clipboard-from-variable-code-example
+  copyToClipboard(text) {
+    var input = document.body.appendChild(document.createElement("input"));
+    input.value = text;
+    input.focus();
+    input.select();
+    document.execCommand('copy');
+    input.parentNode.removeChild(input);
   }
 
 }
