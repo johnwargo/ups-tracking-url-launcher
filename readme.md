@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/77bb0211-20a2-404d-a08e-dfae6f0a25eb/deploy-status)](https://app.netlify.com/sites/upstrack/deploys)
 
-You can find this app hosted at https://upstrack.netlify.app/
+You can find this app hosted at https://ups-track.netlify.app/
 
 Have you ever been notified that a package was on its way to you, but only received the UPS tracking number instead of a link to the package delivery status page? You can take the tracking number, head over to https://ups.com and paste the tracking number in to see the current status. I get enough packages that I use a todo list manager to track incoming packages with the link to the package status so I can easily check to see when the package is due.
 
